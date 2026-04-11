@@ -6,7 +6,7 @@ const airplaneRepository=new AirplaneRepository();
 
 async function createAirplane(data){
     try{
-        console.log("Inside Service");
+        //console.log("Inside Service");
         const airplane=await airplaneRepository.create(data);
         return airplane;
     }
@@ -22,6 +22,17 @@ async function createAirplane(data){
     }
 }
 
+async function getAirplanes(){
+    try{
+       const airplane=await airplaneRepository.getAll();
+       return airplane; 
+    } 
+    catch(error){
+        throw new AppError("Cannot fetch data of all airplanes",StatusCodes.INTERNAL_SERVER_ERROR);
+    }
+}
+
 module.exports={
-    createAirplane
+    createAirplane,
+    getAirplanes
 }
