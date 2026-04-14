@@ -4,8 +4,6 @@ const { AirplaneMiddlewares } = require('../../middlewares');
 
 const router=express.Router();
 
-console.log("Inside Airplane Routes");
-
 //api/v1/airplane ->POST
 router.post('/',
             AirplaneMiddlewares.validateCreateRequest,

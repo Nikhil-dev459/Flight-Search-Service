@@ -6,11 +6,11 @@ const airplaneRepository=new AirplaneRepository();
 
 async function createAirplane(data){
     try{
-        //console.log("Inside Service");
         const airplane=await airplaneRepository.create(data);
         return airplane;
     }
     catch(error){
+        //console.log(error);
         if(error.name=='SequelizeValidationError'){
             let explanation=[];
             error.errors.forEach(err => {

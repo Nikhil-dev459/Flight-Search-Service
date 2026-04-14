@@ -9,7 +9,6 @@ const {SuccessResponse,ErrorResponse}=require('../utils/common');
 
 async function createAirplane(req,res){
     try {
-        //console.log("Inside Controller");
         console.log(req.body);
         const airplane=await AirplaneService.createAirplane({
             modelNumber:req.body.modelNumber,
