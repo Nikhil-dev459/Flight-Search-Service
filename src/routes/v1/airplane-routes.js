@@ -4,22 +4,22 @@ const { AirplaneMiddlewares } = require('../../middlewares');
 
 const router=express.Router();
 
-//api/v1/airplane ->POST
+//api/v1/airplanes ->POST
 router.post('/',
             AirplaneMiddlewares.validateCreateRequest,
             AirplaneController.createAirplane);
 
-//api/v1/airplane ->GET
+//api/v1/airplanes ->GET
 router.get('/',
             AirplaneController.getAirplanes);
 
 module.exports=router;
 
-//api/v1/airplane/:id ->GET
+//api/v1/airplanes/:id ->GET
 router.get('/:id',
             AirplaneController.getAirplane);
 
-//api/v1/airplane/:id ->DELETE
+//api/v1/airplanes/:id ->DELETE
 router.delete('/:id',
             AirplaneController.destroyAirplane);
 
