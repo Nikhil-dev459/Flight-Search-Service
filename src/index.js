@@ -35,7 +35,7 @@ app.listen(serverConfig.PORT,async()=>{
     //onst city=await City.findByPk(3);
     //await city.createAirport({name:'Chennai Airport',code:'CHN'});
     await City.destroy({
-        where:{
+        where : {
             id:3
         }
     });
